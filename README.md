@@ -1,21 +1,56 @@
-a. Problem Statement
+Bank Customer Churn Prediction
+Project Overview
+This project aims to predict the likelihood of bank customers leaving the institution (churning). By analyzing demographic and financial data, the model identifies high-risk customers, allowing the bank to take proactive retention measures.
 
-The objective of this project is to predict bank customer churn (the likelihood of a customer leaving the bank) using various machine learning classification models. In the banking sector, identifying at-risk customers is crucial for implementing proactive retention strategies and maintaining a healthy Lifetime Value (LTV) for the customer base.
+Dataset
+The project uses the Churn_Modelling.csv dataset, which consists of 10,000 customer records with 14 features, including:
 
-b. Dataset Description
+Credit Score, Age, Tenure, Balance
 
-Source: Bank Churn Modelling dataset (Kaggle).
+Number of Products, Credit Card Status, Active Membership
 
-Instance Size: 10,000 records.
+Estimated Salary and Geography
 
-Target Variable: Exited (1 = Churned, 0 = Stayed).
+Machine Learning Models
+I implemented and compared six classification algorithms to determine the best performer:
 
-Features Used (13 total): * Demographics: Age, Geography, Gender.
+Random Forest (Best Performer: ~85.9% Accuracy, 0.842 AUC)
 
-Financials: Credit Score, Balance, Estimated Salary.
+XGBoost
 
-Engagement: Tenure, Number of Products, Has CrCard, IsActiveMember.
+Logistic Regression
 
-Engineered: Balance_Salary_Ratio, Tenure_By_Age, Is_Senior.
+Decision Tree
 
+K-Nearest Neighbor (KNN)
+
+Naive Bayes
+
+Key Technical Implementations
+Exploratory Data Analysis (EDA): Visualizing distributions and correlations to understand churn drivers.
+
+Scalable Processing: Developed a version of the pipeline using PySpark on Databricks for handling larger datasets.
+
+Model Evaluation: Focused on Accuracy and AUC-ROC scores to ensure balanced performance.
+
+Deployment: The final model is deployed as a real-time risk analysis tool using Streamlit Community Cloud.
+
+Installation & Usage
+
+Clone the repository:
+
+Bash
+git clone https://github.com/yourusername/bank-churn-prediction.git
+
+Install requirements:
+
+Bash
+pip install -r requirements.txt
+Run the application:
+
+Bash
+streamlit run streamlit_app.py
+
+Conclusion
+The Random Forest model provides the most reliable predictions for this dataset. This tool serves as a decision-support system for relationship managers to focus their efforts on customers most likely to exit.
 
